@@ -1,0 +1,28 @@
+#
+# Author: Kit Chambers
+# Contact: kit.chambers@motionsignaltechnologies.com
+#
+# Motion Signal Technologies Ltd.
+# All rights reserved
+#
+# The contents of this file are considered proprietary and usage or
+# reproduction without prior authorization is strictly prohibited.
+#
+
+
+version: "3.3"
+
+services:
+
+  jvtk-dev:
+    image: batearedcollie/vtk-java-docker:latest
+    volumes:
+      - .:/src/
+
+    environment:
+      - CLASSPATH=/usr/local/lib/java/vtk.jar
+      - LD_LIBRARY_PATH=/usr/lib:/usr/local/lib/
+
+    command: bash
+
+
